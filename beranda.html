@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Beranda - Smart Kos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Smart Kos Management</div>
+            <div class="user-info">
+                <span id="user-role">Loading...</span>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="beranda.html" class="nav-link active">Beranda</a></li>
+                <li><a href="penghuni.html" class="nav-link">Penghuni</a></li>
+                <li><a href="kamar.html" class="nav-link">Kamar</a></li>
+                <li><a href="pembayaran.html" class="nav-link">Pembayaran</a></li>
+                <li><a href="pengeluaran.html" class="nav-link">Pengeluaran</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <div class="page">
+                <div class="page-header">
+                    <h1>Beranda</h1>
+                    <button id="print-report" class="btn print-btn">📄 Cetak Laporan</button>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Pendapatan</h3>
+                        <div class="value">Rp 0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Pengeluaran</h3>
+                        <div class="value">Rp 0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Kamar Terisi</h3>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Saldo Bersih</h3>
+                        <div class="value">Rp 0</div>
+                    </div>
+                </div>
+               
+                <div class="card full-width" id="card-belum-lunas">
+                    <h3>Tagihan Belum Lunas</h3>
+                
+                    <table id="tabel-belum-lunas" class="table-dashboard">
+                        <thead>
+                            <tr>
+                                <th>Nama Penghuni</th>
+                                <th>Tenggat Pembayaran</th>
+                                <th>Nominal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="3" style="text-align:center;">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+
+                <!-- Template Cetak Laporan (Hidden) -->
+                <div id="print-content" style="display: none;">
+                    <h2 style="text-align: center;">LAPORAN KEUANGAN SMART KOS</h2>
+                    <p style="text-align: center;">Tanggal: <span id="print-date"></span></p>
+                    <table style="width: 100%; border: 1px solid #000; border-collapse: collapse; margin-top: 20px;">
+                        <tr><td style="border: 1px solid #000; padding: 8px;">Total Pendapatan</td><td style="border: 1px solid #000; padding: 8px;">Rp 0</td></tr>
+                        <tr><td style="border: 1px solid #000; padding: 8px;">Total Pengeluaran</td><td style="border: 1px solid #000; padding: 8px;">Rp 0</td></tr>
+                        <tr style="font-weight: bold;"><td style="border: 1px solid #000; padding: 8px;">Saldo Bersih</td><td style="border: 1px solid #000; padding: 8px;">Rp 0</td></tr>
+                    </table>
+                    <br>
+                    <table style="width: 100%; border: 1px solid #000; border-collapse: collapse; margin-top: 20px;">
+                        <tr><td style="border: 1px solid #000; padding: 8px;">Kamar Terisi</td><td style="border: 1px solid #000; padding: 8px;">0 Kamar</td></tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Informasi Tambahan -->
+<div class="card full-width" id="info-tambahan">
+    <h3>Informasi Umum Kos</h3>
+    
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        
+        <!-- Tata Tertib -->
+        <div class="info-box">
+            <h4>📌 Tata Tertib Kos</h4>
+            <ul>
+                <li>Wajib menjaga kebersihan kamar dan lingkungan kos.</li>
+                <li>Tidak diperbolehkan membawa tamu menginap.</li>
+                <li>Jam malam sampai pukul 23.00</li>
+                <li>Dilarang merusak fasilitas kos.</li>
+                <li>Wajib menghemat listrik dan air, serta mematikan lampu dan keran saat tidak digunakan.</li>
+            </ul>
+        </div>
+
+        <!-- WiFi -->
+        <div class="info-box">
+            <h4>📶 Informasi WiFi</h4>
+            <p><strong>Nama WiFi:</strong> SmartKos_Wifi</p>
+            <p><strong>Password:</strong> smartkos123</p>
+        </div>
+    </div>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

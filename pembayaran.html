@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembayaran - Smart Kos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Smart Kos Management</div>
+            <div class="user-info"><span id="user-role">User</span><button id="logout-btn" class="logout-btn">Logout</button></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="beranda.html" class="nav-link">Beranda</a></li>
+                <li><a href="penghuni.html" class="nav-link">Penghuni</a></li>
+                <li><a href="kamar.html" class="nav-link">Kamar</a></li>
+                <li><a href="pembayaran.html" class="nav-link active">Pembayaran</a></li>
+                <li><a href="pengeluaran.html" class="nav-link">Pengeluaran</a></li>
+            </ul>
+        </nav>
+        <main>
+           <!-- TAMPILAN PEMILIK -->
+           <div id="view-pemilik" style="display: none;">
+                <div class="page-header">
+                    <h1>Data Pembayaran</h1>
+                    <button id="tambah-pembayaran" class="btn btn-primary">Tambah Pembayaran</button>
+                </div>
+                <table id="table-pembayaran">
+                    <thead><tr><th>Nama</th><th>Bulan</th><th>Tgl Bayar</th><th>Jumlah</th><th>Status</th><th>Aksi</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- TAMPILAN PENGHUNI -->
+            <div id="view-penghuni" style="display: none;">
+                <div class="page-header">
+                    <h1>Pembayaran Saya</h1>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20mau%20tanya%20tentang%20pembayaran%20kos" 
+                       target="_blank" class="btn btn-wa" id="btn-wa-pemilik">
+                        📞 Hubungi Pemilik
+                    </a>
+                </div>
+
+             <!-- Status Pembayaran Bulan Ini -->
+             <div class="card" style="margin-bottom: 2rem;">
+                <h3>Status Pembayaran Bulan Ini</h3>
+                <div id="status-bulan-ini">
+                    <p>Memuat data...</p>
+                </div>
+            </div>
+
+            <!-- Tenggat Bayar -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3>Tenggat Pembayaran</h3>
+                <div id="info-tenggat">
+                    <p>Memuat data...</p>
+                </div>
+            </div>
+
+             <!-- Riwayat Pembayaran -->
+             <div class="page-header">
+                <h2>Riwayat Pembayaran</h2>
+            </div>
+            <table id="table-riwayat-penghuni">
+                <thead><tr><th>Bulan</th><th>Status</th><th>Tanggal Bayar</th><th>Nominal</th><th>Nota</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        </main>
+        <div id="modal-pembayaran" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><h3>Tambah Pembayaran</h3></div>
+                <div class="modal-body">
+                    <form id="form-pembayaran">
+                        <div class="form-group"><label>Penghuni</label><select id="id-penghuni-bayar"><option value="">Pilih</option></select></div>
+                        <div class="form-group"><label>Bulan</label><input type="text" id="bulan-pembayaran" required></div>
+                        <div class="form-group"><label>Tgl Bayar</label><input type="date" id="tanggal-bayar" required></div>
+                        <div class="form-group"><label>Jumlah</label><input type="number" id="jumlah-pembayaran" required></div>
+                        <div class="form-group"><label>Status</label><select id="status-pembayaran"><option value="lunas">Lunas</option><option value="belum">Belum</option></select></div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="batal-pembayaran">Batal</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Print Nota (Penghuni) -->
+        <div id="modal-nota" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Nota Pembayaran</h3>
+                    <span class="close" id="close-nota">&times;</span>
+                </div>
+                <div class="modal-body" id="print-content-nota">
+                    <!-- Isi nota akan diisi oleh JavaScript -->
+                </div>
+                <div class="modal-footer" style="padding: 1rem; text-align: right;">
+                    <button class="btn btn-secondary" id="close-nota-btn">Tutup</button>
+                    <button class="btn btn-primary" id="print-nota">🖨️ Cetak Nota</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

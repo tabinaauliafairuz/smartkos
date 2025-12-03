@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengeluaran - Smart Kos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Smart Kos Management</div>
+            <div class="user-info"><span id="user-role">User</span><button id="logout-btn" class="logout-btn">Logout</button></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="beranda.html" class="nav-link">Beranda</a></li>
+                <li><a href="penghuni.html" class="nav-link">Penghuni</a></li>
+                <li><a href="kamar.html" class="nav-link">Kamar</a></li>
+                <li><a href="pembayaran.html" class="nav-link">Pembayaran</a></li>
+                <li><a href="pengeluaran.html" class="nav-link active">Pengeluaran</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="page">
+                <div class="page-header">
+                    <h1>Data Pengeluaran</h1>
+                    <button id="tambah-pengeluaran" class="btn btn-primary">Tambah Pengeluaran</button>
+                </div>
+                <table id="table-pengeluaran">
+                    <thead><tr><th>Kategori</th><th>Jumlah</th><th>Tgl</th><th>Ket</th><th>Aksi</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+        <div id="modal-pengeluaran" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><h3>Tambah Pengeluaran</h3></div>
+                <div class="modal-body">
+                    <form id="form-pengeluaran">
+                        <div class="form-group"><label>Kategori</label><input type="text" id="kategori-pengeluaran" required></div>
+                        <div class="form-group"><label>Jumlah</label><input type="number" id="jumlah-pengeluaran" required></div>
+                        <div class="form-group"><label>Tanggal</label><input type="date" id="tanggal-pengeluaran" required></div>
+                        <div class="form-group"><label>Keterangan</label><textarea id="keterangan-pengeluaran"></textarea></div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="batal-pengeluaran">Batal</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

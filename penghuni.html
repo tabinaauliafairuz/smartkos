@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Penghuni - Smart Kos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Smart Kos Management</div>
+            <div class="user-info"><span id="user-role">User</span><button id="logout-btn" class="logout-btn">Logout</button></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="beranda.html" class="nav-link">Beranda</a></li>
+                <li><a href="penghuni.html" class="nav-link active">Penghuni</a></li>
+                <li><a href="kamar.html" class="nav-link">Kamar</a></li>
+                <li><a href="pembayaran.html" class="nav-link">Pembayaran</a></li>
+                <li><a href="pengeluaran.html" class="nav-link">Pengeluaran</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="page">
+                <div class="page-header">
+                    <h1>Data Penghuni</h1>
+                    <button id="tambah-penghuni" class="btn btn-primary">Tambah Penghuni</button>
+                </div>
+                <table id="table-penghuni">
+                    <thead><tr><th>Nama</th><th>No. HP</th><th>Alamat</th><th>Tgl Masuk</th><th>Kamar</th><th>Aksi</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+        <!-- Modal -->
+        <div id="modal-penghuni" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><h3>Tambah Penghuni</h3></div>
+                <div class="modal-body">
+                    <form id="form-penghuni">
+                        <div class="form-group"><label>Nama</label><input type="text" id="nama" required></div>
+                        <div class="form-group"><label>No HP</label><input type="text" id="no-hp" required></div>
+                        <div class="form-group"><label>Alamat</label><textarea id="alamat" required></textarea></div>
+                        <div class="form-group"><label>Tgl Masuk</label><input type="date" id="tanggal-masuk" required></div>
+                        <div class="form-group"><label>Pilih Kamar</label><select id="id-kamar"><option value="">Pilih Kamar</option></select></div>
+                        
+                        <div class="form-group"><label>Username</label>
+                            <input type="text" id="username-penghuni" required>
+                        </div>
+                    
+                        <div class="form-group"><label>Password</label>
+                            <input type="password" id="password-penghuni" required minlength="6">
+                        </div>
+                    
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="batal-penghuni">Batal</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>                    
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
